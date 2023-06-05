@@ -52,7 +52,7 @@ var cellTextOptions = [
     "Horrible Grammar",
     "uwu / owo / :3",
     "Talking About Porn",
-    "Invading Personal Apace",
+    "Invading Personal Space",
     "Shy",
     "Hypnotization",
     "Oversharing",
