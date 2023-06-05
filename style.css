@@ -1,0 +1,132 @@
+html {
+    background-color: #E0FFFF;
+}
+
+#wrapper {
+    background-color: #d9f2ff;
+    width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 2px solid black;
+}
+
+h1, h2 {
+    color: #483D8B;
+}
+
+#bingoCard {
+    background-color: #6aa2cf !important;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.bingoRow {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+}
+
+.bingoCell, .titleCell {
+    width: 128px;
+    height: 96px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border: 2px solid #778899;
+    box-sizing: border-box;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #000;
+    text-align: center;
+    user-select: none;
+    padding: 4px
+}
+
+.titleCell {
+    height: 80px;
+    background-color: #a7e4f6; /* Midnight Blue */
+}
+
+.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clicked {
+    background-color: #0c0;
+}
+
+#buttonsArea {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.bingoButton {
+    width: 160px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border: 2px solid #000;
+    border-radius: 5px;
+
+    box-sizing: border-box;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #000;
+    text-align: center;
+    cursor: pointer;
+}
+
+#newCardButton {
+    background-color: #89CFF0;
+}
+
+#newCardButton:hover {
+    background-color: #6DB8E1;
+}
+
+#newCardButton:active {
+    background-color: #4D9ED2;
+}
+
+#addPointButton {
+    background-color: #66ce66;
+}
+
+#addPointButton:hover {
+    background-color: #5fbb5f;
+}
+
+#addPointButton:active {
+    background-color: #509350;
+}
+
+#removePointButton {
+    background-color: #F08080;
+}
+
+#removePointButton:hover {
+    background-color: #E06666;
+}
+
+#removePointButton:active {
+    background-color: #CC4C4C;
+}
