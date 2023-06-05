@@ -1,4 +1,3 @@
-//Gets each element with the class of "bingoCell" and stores it in the variable "cells"
 var cells = document.getElementsByClassName("bingoCell");
 
 var cellTextOptions = [
@@ -68,11 +67,9 @@ var freeSpaceOptions = [
 ]
 
 var clickedCells = new Array(25).fill(false);
-
 var score = 0;
 
 var gotBingo = false;
-
 var rowScores = [0, 0, 0, 0, 0];
 var columnScores = [0, 0, 0, 0, 0];
 var diagonalScores = [0, 0];
@@ -93,6 +90,7 @@ function randomizeCells() {
     cells[12].innerHTML = freeSpaceOptions[0] + "<br/>(Free Space)";
 }
 
+//Resets the game by randomizing and deselecting all cells
 function resetGame() {
     gotBingo = false;
     clickedCells.fill(false);
@@ -102,6 +100,7 @@ function resetGame() {
     randomizeCells();
 }
 
+//Updates the score and displays it on the page
 function updateScore(newScore) {
     if (newScore < 0) {
         newScore = 0;
@@ -111,6 +110,8 @@ function updateScore(newScore) {
     document.getElementById("score").innerHTML = "Score: " + score;
 }
 
+//Checks if the player has a bingo and updates the score accordingly.
+//If the player unchecks a cell and no longer has a bingo, the score will be updated to remove the point.
 function checkBingo() {
     if (rowScores.includes(5) || columnScores.includes(5) || diagonalScores.includes(5)) {
         if (gotBingo) {
