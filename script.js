@@ -4,7 +4,7 @@ var cellTextOptions = [
     "Top",
     "Bottom",
     "Overly Sexual",
-    "Certified X",
+    "Verified X",
     "Bisexual",
     "Cuddling",
     "Poly",
