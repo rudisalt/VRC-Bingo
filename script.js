@@ -31,7 +31,6 @@ var cellTextOptions = [
     "Phantom Sense",
     "Phantom Pain",
     "Sparkle Dog",
-    "Drama",
     "Internet Psychologist",
     "VRC Family",
     "Mute",
@@ -48,11 +47,24 @@ var cellTextOptions = [
     "Trans as Personality",
     "Edgy Character",
     "Headpats",
+    "Repping Horny Group",
+    "Role Play",
+    "Horrible Grammar",
+    "uwu / owo / :3",
+    "Talking About Porn",
+    "Invading Personal Apace",
+    "Shy",
+    "Hypnotization",
+    "Oversharing",
+    "Constant Chatbox Popups",
 ]
 
 var freeSpaceOptions = [
     "Mirror Dweller",
     "Daddy Issues",
+    "Drama",
+    "Cringe",
+    "Weird",
 ]
 
 var clickedCells = new Array(25).fill(false);
