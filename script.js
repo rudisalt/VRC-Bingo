@@ -36,7 +36,6 @@ var easyTextOptions = [
     "Computer Science",
     "Repping Horny Group",
     "Pup / Fox / Proto in name",
-    "Cuddle Puddle",
     "Floofy",
     "Minor",
     "Mute",
@@ -73,6 +72,7 @@ var hardTextOptions = [
     "DPS Enabled",
     "Horrible Grammar",
     "Bear",
+    "Cuddle Puddle",
 ]
 
 var freeSpaceOptions = [
