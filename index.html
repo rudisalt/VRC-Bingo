@@ -46,10 +46,24 @@
             <div class="bingoCell"><p unselectable="on">25</p></div>
         </div>
 
-        <div id="buttonsArea">
-            <button id="newCardButton" class="bingoButton">New Card</button>
-            <button id="addPointButton" class="bingoButton">Add Point</button>
-            <button id="removePointButton" class="bingoButton">Remove Point</button>
+        <div id="controlsArea">
+            <div id="buttonsArea">
+                <button id="newCardButton" class="bingoButton">New Card</button>
+                <button id="addPointButton" class="bingoButton">Add Point</button>
+                <button id="removePointButton" class="bingoButton">Remove Point</button>
+            </div>
+
+            <div id="difficultySelectionArea">
+                <div id="difficultySelect">
+                    <label for="difficulty">Difficulty</label>
+                    <select id="difficulty" name="difficulty">
+                        <option value="0">Easy</option>
+                        <option value="1">Medium</option>
+                        <option value="2">Hard</option>
+                    </select>
+                </div>
+                <p id="difficultyDescription"></p>
+            </div>
         </div>
     </div>
 </body>

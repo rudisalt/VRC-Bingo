@@ -10,7 +10,7 @@ html {
     justify-content: space-between;
 
     width: 640px;
-    height: 800px;
+    height: 830px;
     margin: 0 auto;
     padding: 20px;
     border: 2px solid black;
@@ -25,6 +25,10 @@ h1, h2 {
     color: #483D8B;
 }
 
+h1 {
+    margin-top: 4px;
+}
+
 #bingoCard {
     background-color: #6aa2cf !important;
     display: grid;
@@ -34,7 +38,7 @@ h1, h2 {
     background-color: #fff;
     border: 1px solid #000;
     border-radius: 5px;
-    padding: 10px;
+    padding: 6px;
     box-sizing: border-box;
 }
 
@@ -67,12 +71,21 @@ h1, h2 {
     background-color: #0c0 !important;
 }
 
+#controlsArea {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    padding-bottom: 0px;
+    box-sizing: border-box;
+}
+
 #buttonsArea {
     width: 100%;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 4px;
     flex-grow: 0;
     flex-shrink: 0;
 }
@@ -128,4 +141,37 @@ h1, h2 {
 
 #removePointButton:active {
     background-color: #CC4C4C;
+}
+
+#difficultySelectionArea {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#difficultySelectionArea label {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #000;
+    text-align: center;
+}
+
+#difficultySelect {
+    width: 30%;
+    margin-right: 2%;
+}
+
+#difficulty {
+    width: 80%;
+    height: 30px;
+    margin-top: 10px;
+}
+
+#difficultyDescription {
+    min-height: 60px;
+    margin-left: 8px;
+    width: 70%;
+    align-items: end;
+    display: flex;
 }

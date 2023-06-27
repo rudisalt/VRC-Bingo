@@ -1,6 +1,7 @@
 var cells = document.getElementsByClassName("bingoCell");
 
-var cellTextOptions = [
+// Things that can be seen from the person's avatar, name, bio, etc. without interacting with them
+var easyTextOptions = [
     "Top",
     "Bottom",
     "Overly Sexual",
@@ -18,49 +19,60 @@ var cellTextOptions = [
     "Pronouns in Bio",
     "Pride Flag",
     "Gay",
-    "Infantile Speech",
     "Overly Long Bio",
-    "Trauma Dump",
-    "Fursicution",
-    "Bear",
-    "Princess",
-    "Computer Science",
-    "Minor",
-    "Kink Avatar",
     "Phantom Sense",
-    "Phantom Pain",
-    "Sparkle Dog",
-    "Internet Psychologist",
+    "Harness / BDSM",
+    "Leash",
+    "Bulge",
+    "Large Breasts",
+    "uwu / rawr / :3",
+    "Gay as Personality",
     "VRC Family",
+    "Jockstrap",
+    "Headpats",
+    "Feet Stuff",
+    "Beans",
+    "\"Shy\"",
+    "Computer Science",
+    "Repping Horny Group",
+    "Pup / Fox / Proto in name",
+    "Cuddle Puddle",
+    "Floofy",
+    "Minor",
     "Mute",
-    "Narcissistic",
+]
+
+// Things that can be observed without interacting with them directly, or may take a little bit of interaction
+var mediumTextOptions = [
+    "Phantom Pain",
+    "Physbones Too Strong",
+    "Trans as Personality",
+    "Edgy Character",
+    "Oversharing",
+    "Constant Chatbox Popups",
+    "Princess",
+    "Kink Avatar",
+    "Sparkle Dog",
     "Licking",
     "Sniffing",
     "RP Noises",
-    "Goo / Latex / Pool Toy",
-    "Harness / BDSM",
-    "Leash",
-    "Jockstrap",
-    "Bulge",
-    "Large Breasts",
-    "Physbones Too Strong",
-    "DPS Enabled",
-    "Gay as Personality",
-    "Trans as Personality",
-    "Edgy Character",
-    "Headpats",
-    "Repping Horny Group",
-    "Role Play",
-    "Horrible Grammar",
-    "uwu / owo / :3",
-    "Talking About Porn",
     "Invading Personal Space",
-    "\"Shy\"",
+    "Infantile Speech",
+]
+
+// Things that are rarely seen, or require a lot of interaction to see
+var hardTextOptions = [
+    "Fursicution (Furry Persecution)",
+    "Talking About Porn",
+    "Role Play",
+    "Internet Psychologist",
+    "Trauma Dump",
+    "Narcissistic",
     "Hypnotization",
-    "Oversharing",
-    "Constant Chatbox Popups",
-    "Feet Stuff",
-    "Beans",
+    "Goo / Latex / Pool Toy",
+    "DPS Enabled",
+    "Horrible Grammar",
+    "Bear",
 ]
 
 var freeSpaceOptions = [
@@ -71,8 +83,15 @@ var freeSpaceOptions = [
     "Weird",
 ]
 
+var difficultyDescriptions = [
+    "Things that can be seen from the person's avatar, name, bio, etc. without interacting with them, or are extremely common",
+    "Things that can be observed from watching a person without interacting with them directly, or may take a little bit of interaction",
+    "Things that are very uncommon, or require a lot of interaction to see",
+]
+
 var clickedCells = new Array(25).fill(false);
 var score = 0;
+var difficulty = 0;
 
 var gotBingo = false;
 var rowScores = [0, 0, 0, 0, 0];
@@ -86,6 +105,7 @@ function shuffle(array) {
 
 //Randomizes the text in each cell and removes the "clicked" class
 function randomizeCells() {
+    var cellTextOptions = getCellOptions(difficulty);
     shuffle(cellTextOptions);
     shuffle(freeSpaceOptions);
     for (var i = 0; i < cells.length; i++) {
@@ -113,6 +133,25 @@ function updateScore(newScore) {
 
     score = newScore;
     document.getElementById("score").innerHTML = "Score: " + score;
+}
+
+// Returns a list of cell options based on the difficulty
+// Difficulties are cumulative, so "Easy" will include all "Medium" and "Hard" options as well
+// 0 = Easy, 1 = Medium, 2 = Hard
+function getCellOptions(difficulty) {
+    var options = [];
+
+    if (difficulty >= 0) {
+        options = options.concat(easyTextOptions);
+    }
+    if (difficulty >= 1) {
+        options = options.concat(mediumTextOptions);
+    }
+    if (difficulty >= 2) {
+        options = options.concat(hardTextOptions);
+    }
+
+    return options;
 }
 
 //Checks if the player has a bingo and updates the score accordingly.
@@ -170,5 +209,15 @@ for (var i = 0; i < cells.length; i++) {
 
     cells[index].style.backgroundColor = backgroundColors[index % 2];
 }
+
+// Set the initial difficulty description
+document.getElementById("difficultyDescription").innerHTML = difficultyDescriptions[difficulty];
+
+// Listen to changes on the difficulty dropdown
+document.getElementById("difficulty").addEventListener('change', function() {
+    difficulty = this.value;
+    document.getElementById("difficultyDescription").innerHTML = difficultyDescriptions[difficulty];
+    resetGame();  // Reset the game when difficulty is changed
+});
 
 resetGame();
