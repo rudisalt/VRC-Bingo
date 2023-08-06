@@ -4,7 +4,7 @@ var cells = document.getElementsByClassName("bingoCell");
 var easyTextOptions = [
     "Top",
     "Bottom",
-    "Overly Sexual",
+    "Overtly Sexual",
     "Verified X",
     "Bisexual",
     "Cuddling",
@@ -57,6 +57,9 @@ var mediumTextOptions = [
     "RP Noises",
     "Invading Personal Space",
     "Infantile Speech",
+    "Suicidal",
+    "Goober",
+    "Gremlin",
 ]
 
 // Things that are rarely seen, or require a lot of interaction to see
